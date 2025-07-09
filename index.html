@@ -1,23 +1,31 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Syraga | Marketplace</title>
+    <meta name="description" content="Syraga adalah marketplace buah & sayur segar langsung dari petani dengan sistem belanja online mudah dan cepat.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+    <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
+    <!-- Custom CSS -->
     <style>
+        body {
+            scroll-behavior: smooth;
+        }
+
         .navbar {
             position: sticky;
-            top: 0px;
+            top: 0;
             background-color: ghostwhite;
             backdrop-filter: blur(10px);
+            z-index: 1030;
         }
 
         .navbar-nav {
@@ -29,15 +37,25 @@
         .btn {
             border-radius: 50px;
             padding: 12px 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .card {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
         }
 
         #hero .bg-hero {
-            background-image: url(img-banner1.png);
-            background-size: cover;
-            background-position: center;
-            width: 100%;
+            background: ghostwhite url('img-banner1.png') no-repeat center/cover;
             height: 500px;
-            border-radius: 20px;
+            border-radius: 50px;
         }
 
         #produk .card {
@@ -45,7 +63,12 @@
             margin-top: 20px;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
         }
-        
+
+        .faq-box .accordion-button::after {
+            background-color: #fff;
+            border-radius: 100%;
+        }
+
         .services-box .service i {
             margin-top: 20px;
             font-size: 30px;
@@ -60,15 +83,8 @@
             padding: 30px;
         }
 
-        .faq-box .accordion-button::after {
-            background-color: rgb(255, 255, 255);
-            border-radius: 100%;
-        }
-
         #cta .bg-cta {
-            background-image: url(img-cta.png);
-            background-size: cover;
-            background-position: center;
+            background: #333 url('img-cta.png') no-repeat center/cover;
             height: 500px;
             border-radius: 50px;
             text-align: center;
@@ -81,19 +97,36 @@
         }
 
         .footer-box .row .col:nth-child(2) a {
-            opacity: 75%;
+            opacity: 0.75;
         }
 
         .footer-box .row .col:nth-child(2) a:hover {
-            opacity: 100%;
+            opacity: 1;
         }
 
         .copyright {
             margin-top: 100px;
         }
+
+        @media (max-width: 768px) {
+            #hero .bg-hero,
+            #cta .bg-cta {
+                height: 300px;
+            }
+
+            .navbar-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
-
 
 <body id="home">
     <nav class="navbar navbar-expand-lg sticky-top">
@@ -111,7 +144,7 @@
                     <a class="nav-link fw-bold" href="#about">Tentang</a>
                     <a class="nav-link fw-bold" href="#faq">FAQ</a>
                     <div class="vr ms-3 me-3"></div>
-                    <a class="btn btn-outline-success fw-bold me-3" href="https://zenryuu-04.github.io/Login/">Login</a>
+                    <a class="btn btn-outline-success fw-bold me-3" href="#">Login</a>
                     <a class="btn btn-success fw-bold" href="#">Daftar</a>
                 </div>
             </div>
@@ -125,7 +158,7 @@
                 <div class="row">
                     <div class="col">
                         <h1 class="text-success">Natural dan Segar <br> untuk kesehatan</h1>
-                        <button class="btn btn-outline-success">Belanja Sekarang</button>
+                        <button class="btn btn-outline-success btn-belanja">Belanja Sekarang</button>
                     </div>
                 </div>
             </div>
@@ -243,102 +276,141 @@
     </section>
 
     <section class="faq" id="faq">
-      <div class="container">
-        <div class="faq-box">
-          <h1 class="fw-bold mb-3 text-center" data-aos="fade-up" data-aos-duration="1000">FAQ</h1>
-          <p class="text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Pertanyaan yang sering diajukan</p>
+        <div class="container mt-5">
+            <div class="faq-box">
+                <h1 class="fw-bold mb-3 text-center" data-aos="fade-up" data-aos-duration="1000">FAQ</h1>
+                <p class="fw-bold text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    Pertanyaan yang sering diajukan</p>
+                <div class="accordion pt-4" id="accordionExample">
+                    <div class="row row-cols-md-2 row-cols-1 g-4">
 
-          <div class="accordion pt-4" id="accordionExample">
-            <div class="row row-cols-md-2 row-cols-1 g-4">
-              <div class="col">
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed bg-danger text-white fw-bold lh-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Apakah kedai kopi buka saat libur atau liburan?
-                    </button>
-                  </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <strong>Tidak semua kedai kopi tutup saat libur. Beberapa kedai kopi tetap buka untuk melayani pelanggan, terutama selama liburan besar  seperti lebaran.</strong>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed bg-danger text-white fw-bold lh-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                      Apakah ada layanan pengiriman?
-                    </button>
-                  </h2>
-                  <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <strong>Beberapa kedai bekerja sama dengan layanan pengiriman seperti Grab-Food, Go-Food, atau layanan pengiriman lokal. Anda dapat memesan melalui aplikasi layanan tersebut.</strong>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed bg-danger text-white fw-bold lh-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                      Bagaimana cara mengecek status pesanan online?
-                    </button>
-                  </h2>
-                  <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <strong>Jika Anda memesan dengan akun online, biasanya Anda bisa masuk ke akun Anda dan melihat status pesanan di bagian "Pesanan Saya" atau "Riwayat Pesanan".</strong> 
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed bg-danger text-white fw-bold lh-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                      Apakah ada batas waktu untuk reservasi?
-                    </button>
-                  </h2>
-                  <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <strong>Beberapa kedai kopi mungkin memiliki kebijakan pembatalan reservasi yang mengharuskan Anda membatalkan reservasi Anda sebelum batas waktu tertentu (misalnya, 72 jam sebelum reservasi) untuk menghindari biaya pembatalan. Jika Anda membatalkan setelah batas waktu, Anda mungkin dikenakan biaya atau kehilangan uang yang telah dibayarkan.</strong> 
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed bg-danger text-white fw-bold lh-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-                      Apakah kedai kopi melarang membawa hewan peliharaan?
-                    </button>
-                  </h2>
-                  <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <strong>Kedai kopi mungkin melarang hewan peliharaan karena potensi gangguan atau alergi dari pengunjung lain.</strong>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed bg-danger text-white fw-bold lh-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-                      Apakah kedai kopi anda menyediakan akses bagi penyandang disabilitas?
-                    </button>
-                  </h2>
-                  <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <strong>Ya, banyak kedai kopi yang berusaha menyediakan akses bagi penyandang disabilitas. Aksesibilitas ini bisa berupa fasilitas fisik seperti ramp, jalur khusus, dan toilet yang disesuaikan, serta juga inklusi dalam pelayanan, seperti penggunaan bahasa isyarat atau pemberian penjelasan yang mudah dipahami. </strong>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                        <!-- Item 1 -->
+                        <div class="col" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed bg-success text-white fw-bold lh-lg"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                        aria-expanded="false" aria-controls="collapseOne">
+                                        Apakah Syraga buka saat libur?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>Ya.</strong> Syraga tetap buka saat hari libur, termasuk hari besar
+                                        nasional.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="col" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed bg-success text-white fw-bold lh-lg"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                        aria-expanded="false" aria-controls="collapseTwo">
+                                        Apakah ada layanan pengiriman?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>Ya.</strong> Syraga menyediakan layanan pengiriman untuk berbagai produk
+                                        yang tersedia.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="col" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed bg-success text-white fw-bold lh-lg"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                        aria-expanded="false" aria-controls="collapseThree">
+                                        Bagaimana cara mengecek status pesanan online?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>Anda dapat mengeceknya melalui aplikasi atau situs web Syraga.</strong>
+                                        Masuk ke akun Anda, lalu buka bagian <em>"Pesanan Saya"</em> untuk melihat
+                                        status pesanan.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="col" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed bg-success text-white fw-bold lh-lg"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                        aria-expanded="false" aria-controls="collapseFour">
+                                        Apakah ada batas waktu untuk reservasi?
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>Ya.</strong> Anda harus membatalkan reservasi maksimal 72 jam sebelumnya
+                                        untuk menghindari biaya pembatalan.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 5 -->
+                        <div class="col" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="700">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button collapsed bg-success text-white fw-bold lh-lg"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                        aria-expanded="false" aria-controls="collapseFive">
+                                        Apakah Syraga mengizinkan membawa hewan peliharaan di dalam?
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>Ya.</strong> Syraga mengizinkan pengunjung membawa hewan peliharaan,
+                                        namun tetap dengan pengawasan dan ketentuan tertentu.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 6 -->
+                        <div class="col" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="700">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSix">
+                                    <button class="accordion-button collapsed bg-success text-white fw-bold lh-lg"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix"
+                                        aria-expanded="false" aria-controls="collapseSix">
+                                        Apakah Syraga menyediakan akses bagi penyandang disabilitas?
+                                    </button>
+                                </h2>
+                                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>Ya.</strong> Syraga menyediakan aksesibilitas bagi penyandang
+                                        disabilitas, termasuk ramp, toilet khusus, dan bantuan dalam pelayanan.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- row -->
+                </div> <!-- accordion -->
+            </div> <!-- faq-box -->
+        </div> <!-- container -->
     </section>
+
 
     <section id="cta">
         <div class="container mt-5">
@@ -348,7 +420,7 @@
                         <img src="logo-putih.png" alt="Logo Syraga Putih">
                         <h1 class="text-light mt-3 mb-3">Ayo Belanja sekarang dan mulai nikmati <br> kesegaran buah &
                             sayur yang sehat!</h1>
-                        <button class="btn btn-outline-light">Belanja Sekarang</button>
+                        <button class="btn btn-outline-light btn-belanja">Belanja Sekarang</button>
                     </div>
                 </div>
             </div>
@@ -400,15 +472,27 @@
         </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
 
+    document.querySelectorAll('.btn-belanja').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelector('#produk')?.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
 </body>
 
 </html>
