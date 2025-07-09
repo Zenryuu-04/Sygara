@@ -46,11 +46,6 @@
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
         }
         
-         .faq-box .accordion-button::after {
-            background-color: rgb(255, 255, 255);
-            border-radius: 100%;
-        }
-        
         .services-box .service i {
             margin-top: 20px;
             font-size: 30px;
@@ -63,6 +58,11 @@
             display: flex;
             align-items: center;
             padding: 30px;
+        }
+
+        .faq-box .accordion-button::after {
+            background-color: rgb(255, 255, 255);
+            border-radius: 100%;
         }
 
         #cta .bg-cta {
@@ -243,130 +243,101 @@
     </section>
 
     <section class="faq" id="faq">
-        <div class="container mt-5">
-            <div class="faq-box">
-                <h1 class="fw-bold mb-3 text-center" data-aos="fade-up" data-aos-duration="1000">FAQ</h1>
-                <p class="fw-bold text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                    Pertanyaan yang sering diajukan</p>
-                <div class="accordion pt-4" id="accordionExample">
-                    <div class="row row-cols-md-2 row-cols-1 g-4">
-                        <div class="col" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed bg-success text-white fw-bold lh-lg"
-                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                        aria-expanded="true" aria-controls="collapseOne">
-                                        Apakah Syraga buka saat libur?
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>Syraga tetap buka saat libur.</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed bg-success text-white fw-bold lh-lg"
-                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                        aria-expanded="true" aria-controls="collapseTwo">
-                                        Apakah ada layanan pengiriman?
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>Syraga menyediakan layanan pengiriman.</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed bg-success text-white fw-bold lh-lg"
-                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                        aria-expanded="true" aria-controls="collapseThree">
-                                        Bagaimana cara mengecek status pesanan online?
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>Anda dapat mengecek status pesanan online melalui aplikasi atau situs
-                                            web
-                                            Syraga. Masuk ke akun Anda dan buka bagian "Pesanan Saya" untuk melihat
-                                            status pesanan Anda.</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed bg-success text-white fw-bold lh-lg"
-                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
-                                        aria-expanded="true" aria-controls="collapseFour">
-                                        Apakah ada batas waktu untuk reservasi?
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>Syraga memiliki kebijakan pembatalan reservasi yang mengharuskan Anda
-                                            membatalkan reservasi Anda sebelum batas waktu tertentu (misalnya, 72 jam
-                                            sebelum reservasi) untuk menghindari biaya pembatalan. Jika Anda membatalkan
-                                            setelah batas waktu, Anda mungkin dikenakan biaya atau kehilangan uang yang
-                                            telah dibayarkan.</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="700">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed bg-success text-white fw-bold lh-lg"
-                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive"
-                                        aria-expanded="true" aria-controls="collapseFive">
-                                        Apakah Syraga mengizinkan membawa hewan peliharaan di dalam?
-                                    </button>
-                                </h2>
-                                <div id="collapseFive" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>Syraga mengizinkan membawa hewan peliharaan di dalam.</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="700">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed bg-success text-white fw-bold lh-lg"
-                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix"
-                                        aria-expanded="true" aria-controls="collapseSix">
-                                        Apakah Syraga menyediakan akses bagi penyandang disabilitas?
-                                    </button>
-                                </h2>
-                                <div id="collapseSix" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>Ya, Syraga berusaha menyediakan akses bagi penyandang disabilitas.
-                                            Aksesibilitas ini bisa berupa fasilitas fisik seperti ramp, jalur khusus,
-                                            dan toilet yang disesuaikan, serta juga inklusi dalam pelayanan, seperti
-                                            penggunaan bahasa isyarat atau pemberian penjelasan yang mudah
-                                            dipahami.</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+      <div class="container">
+        <div class="faq-box">
+          <h1 class="fw-bold mb-3 text-center" data-aos="fade-up" data-aos-duration="1000">FAQ</h1>
+          <p class="text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Pertanyaan yang sering diajukan</p>
+
+          <div class="accordion pt-4" id="accordionExample">
+            <div class="row row-cols-md-2 row-cols-1 g-4">
+              <div class="col">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed bg-danger text-white fw-bold lh-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Apakah kedai kopi buka saat libur atau liburan?
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <strong>Tidak semua kedai kopi tutup saat libur. Beberapa kedai kopi tetap buka untuk melayani pelanggan, terutama selama liburan besar  seperti lebaran.</strong>
                     </div>
+                  </div>
                 </div>
+              </div>
+              <div class="col">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed bg-danger text-white fw-bold lh-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                      Apakah ada layanan pengiriman?
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <strong>Beberapa kedai bekerja sama dengan layanan pengiriman seperti Grab-Food, Go-Food, atau layanan pengiriman lokal. Anda dapat memesan melalui aplikasi layanan tersebut.</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed bg-danger text-white fw-bold lh-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                      Bagaimana cara mengecek status pesanan online?
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <strong>Jika Anda memesan dengan akun online, biasanya Anda bisa masuk ke akun Anda dan melihat status pesanan di bagian "Pesanan Saya" atau "Riwayat Pesanan".</strong> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed bg-danger text-white fw-bold lh-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                      Apakah ada batas waktu untuk reservasi?
+                    </button>
+                  </h2>
+                  <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <strong>Beberapa kedai kopi mungkin memiliki kebijakan pembatalan reservasi yang mengharuskan Anda membatalkan reservasi Anda sebelum batas waktu tertentu (misalnya, 72 jam sebelum reservasi) untuk menghindari biaya pembatalan. Jika Anda membatalkan setelah batas waktu, Anda mungkin dikenakan biaya atau kehilangan uang yang telah dibayarkan.</strong> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed bg-danger text-white fw-bold lh-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                      Apakah kedai kopi melarang membawa hewan peliharaan?
+                    </button>
+                  </h2>
+                  <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <strong>Kedai kopi mungkin melarang hewan peliharaan karena potensi gangguan atau alergi dari pengunjung lain.</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed bg-danger text-white fw-bold lh-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                      Apakah kedai kopi anda menyediakan akses bagi penyandang disabilitas?
+                    </button>
+                  </h2>
+                  <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <strong>Ya, banyak kedai kopi yang berusaha menyediakan akses bagi penyandang disabilitas. Aksesibilitas ini bisa berupa fasilitas fisik seperti ramp, jalur khusus, dan toilet yang disesuaikan, serta juga inklusi dalam pelayanan, seperti penggunaan bahasa isyarat atau pemberian penjelasan yang mudah dipahami. </strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <section id="cta">
